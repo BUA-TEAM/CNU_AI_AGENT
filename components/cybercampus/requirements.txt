@@ -1,0 +1,12 @@
+# Core collection/evaluation and the local FastAPI UI.
+# Upstream has no lockfile; API compatibility must be checked in your environment.
+browser-use[video]>=0.11.4
+python-dotenv
+fastapi
+uvicorn
+httpx
+openai
+pydantic
+bcrypt
+cryptography
+# Optional transcript.py helper requires a separate whisperx installation.

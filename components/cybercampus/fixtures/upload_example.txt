@@ -1,0 +1,1 @@
+Synthetic BUA upload fixture. Contains no student or account information.

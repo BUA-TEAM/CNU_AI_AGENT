@@ -1,0 +1,25 @@
+[project]
+name = "cnu-ai-agent"
+version = "0.0.1"
+description = "CNU KORUS trajectory conversion, QLoRA training and offline evaluation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+training = ["torch>=2.4", "transformers>=4.46", "trl>=0.12", "peft>=0.13", "accelerate>=1.0", "datasets>=3.0", "bitsandbytes>=0.44", "pillow>=10.0"]
+browser = ["browser-use>=0.2.0", "pydantic>=2.0", "httpx"]
+mlx = ["mlx", "mlx-vlm", "safetensors", "numpy"]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "--import-mode=importlib"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["cnu_agent"]

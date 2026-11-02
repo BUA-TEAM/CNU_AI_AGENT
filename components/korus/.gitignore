@@ -1,0 +1,84 @@
+# 데이터 - 절대 commit 금지 (민감정보 포함 가능)
+# 선행 슬래시로 root 디렉토리에만 매칭 (cnu_agent/data/ 같은 코드 디렉토리는 제외)
+/trajectories/
+/trajectories_v2/
+/trajectories_demo/
+/trajectories_mlx_v2/
+/trajectories_v3/
+/trajectories_v3_smoke/
+/discovery/
+/dashboard/
+/tasks/
+/data/
+/data_v2/
+/eval_mlx_v2/
+/eval_vllm_*/
+/ckpt/
+/screenshots/
+*.png
+*.jsonl
+*.parquet
+# analysis/ raw 덤프 (done.text·input_messages에 동료 이름·문서번호 등 PII 포함 가능)
+# v0_failure_modes.md 같이 정제된 보고서는 commit OK (개별 add)
+/analysis/_*.json
+
+# 영상 (대용량 binary, demo용 — 로컬 유지)
+/videos/
+/trajectories_demo/
+
+# 인증 정보
+/auth/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+cookies.json
+storage_state.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.pyright/
+.mypy_cache/
+build/
+dist/
+
+# 가상환경 / 패키지 매니저
+.venv/
+venv/
+env/
+.python-version
+uv.lock
+
+# kordoc local install (npm node_modules ~50MB) — pyproject 같은 격으로 vendor 디렉토리 자체는 commit
+# vendor/kordoc-local/package.json + package-lock.json만 commit, node_modules는 ignore
+vendor/kordoc-local/node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 학습 부산물
+wandb/
+runs/
+logs/
+tensorboard/
+
+# 모델 가중치 (PyPI dep으로 받지 않은 것)
+*.safetensors
+*.bin
+*.pt
+*.pth
+/integration_results/
+/eval_claude*/

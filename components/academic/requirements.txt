@@ -1,0 +1,4 @@
+browser-use[video]
+python-dotenv
+pyvirtualdisplay
+playwright
